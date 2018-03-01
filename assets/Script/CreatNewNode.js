@@ -31,6 +31,12 @@ cc.Class({
         node.parent=this.node;
         //设置位置
         node.position=cc.v2(100);
+
+        //测试该节点的事件是否会被clone的挡住
+        node.on(cc.Node.EventType.MOUSE_DOWN,function(event){
+            cc.log("我是第一次被创建出来的");
+        },node); //打印结果显示并没有被遮挡住
+
         //导出该节点供外部使用
         Global.newNode=node;
 
@@ -40,7 +46,7 @@ cc.Class({
 
     update (dt) {
         this.time+=dt;
-        newNode.x=Math.sin(this.time)*50;
+        newNode.x=Math.sin(this.time)*150;
         // cc.log(newNode.position+this.node.name);
     },
 });
