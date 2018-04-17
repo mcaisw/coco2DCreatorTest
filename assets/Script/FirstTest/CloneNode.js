@@ -38,13 +38,13 @@ cc.Class({
 
             cc.log(cloneNodeTemp instanceof cc.Node);//是node
 
-            // //给克隆的新node添加事件
-            // cloneNodeTemp.on(cc.Node.EventType.MOUSE_DOWN,function(event){
-            //     cc.log("按下鼠标5秒后销毁");
-            //     setTimeout(() => {
-            //         cloneNodeTemp.destroy();
-            //     }, (5000));
-            // },cloneNodeTemp),
+            //给克隆的新node添加事件
+            cloneNodeTemp.on(cc.Node.EventType.MOUSE_DOWN,function(event){
+                cc.log("按下鼠标5秒后销毁");
+                setTimeout(() => {
+                    cloneNodeTemp.destroy();
+                }, (5000));
+            },cloneNodeTemp),
 
             /*
                 上面被注释掉后，点击clone出来的图片没有打印信息，说明并没有复制到那个节点的事件
